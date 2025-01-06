@@ -1,0 +1,112 @@
+.header_container {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Align items vertically */
+  padding: 10px 20px; /* Add padding for better spacing */
+  height: 80px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.logo_container {
+  display: flex;
+  align-items: center;
+}
+
+.logo_container img {
+  height: 40px; /* Default logo height */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.header_link {
+  display: flex;
+  align-items: center;
+  position: relative; /* For absolute positioning of the nav */
+  flex-grow: 1; /* Allow the header link to grow */
+  justify-content: flex-end; /* Align links to the right */
+}
+
+/* Hamburger Button */
+.hamburger {
+  font-size: 30px;
+  background: none; /* Remove default button styles */
+  border: none; /* Remove border */
+  cursor: pointer;
+  display: none; /* Initially hidden */
+}
+
+/* Navigation Styles */
+.nav {
+  display: flex; /* Show nav links by default on larger screens */
+  flex-direction: row; /* Arrange items in a row */
+}
+
+.nav.open {
+  flex-direction: column; /* Stack items vertically when open */
+  position: absolute; /* Position it absolutely */
+  top: 80px; /* Below the header */
+  left: 0;
+  background-color: white;
+  width: 100%; /* Full width */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Shadow for dropdown */
+}
+
+.header_btn {
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: none; /* Remove border for button */
+  color: #fff;
+  background-color: #516cf1;
+  cursor: pointer;
+}
+
+.fixed {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+  padding: 10px; /* Add padding for better touch area */
+}
+
+/* Media query for mobile and tablet views */
+@media screen and (max-width: 768px) {
+  .header_link {
+    width: 100%; /* Full width for mobile */
+    justify-content: flex-end; /* Keep links aligned to the right */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger button on smaller screens */
+  }
+
+  .nav {
+    display: none; /* Hide nav by default on smaller screens */
+  }
+
+  .nav.open {
+    display: flex; /* Show nav when open */
+  }
+
+  .logo_container img {
+    height: 30px; /* Decrease logo height on smaller screens */
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .hamburger {
+    display: none; /* Hide hamburger button on larger screens */
+  }
+
+  .nav {
+    display: flex; /* Show nav normally on larger screens */
+  }
+
+  .logo_container img {
+    height: 40px; /* Default logo height */
+  }
+}
