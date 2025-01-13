@@ -34,7 +34,7 @@ function Login() {
      
       const { token } = axiosResponse.data;
       localStorage.setItem("user-token", token);
-
+     console.log(token)
       login(); // Update login state
      
 
